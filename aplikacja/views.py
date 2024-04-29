@@ -13,7 +13,7 @@ from django.views.generic import ListView
 class NoteListView(ListView):
     queryset = Notatka.objects.all().filter(status='published')
     context_object_name = 'notes'
-    # paginate_by = 3
+    paginate_by = 3
     template_name = "post/list.html"
 
 
