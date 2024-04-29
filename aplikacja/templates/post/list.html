@@ -3,16 +3,16 @@
 {% block title %}Notatki{% endblock %}
 {% block content %}
     <h1>Notatka </h1>
-    {% for post in notes %}
+    {% for note in notes %}
         <h2>
-        <a href="{{ post.get_absolute_url }}">
-            {{ post.title }}
+        <a href="{{ note.get_absolute_url }}">
+            {{ note.title }}
         </a></h2>
         <p class="date">
-        Napisana {{ post.publish }} przez {{ post.author }}
+        Napisana {{ note.publish }} przez {{ note.author }}
         </p>
-        {{ post.body|truncatewords:30|linebreaks }}
-    {% endfor%}
+        {{ note.body|truncatewords:30|linebreaks }}
+    {% endfor %}
 
 {#    {% include "blog/pagination.html" with page=page_obj %}#}
 
