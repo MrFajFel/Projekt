@@ -15,8 +15,6 @@ class NoteListView(ListView):
     context_object_name = 'notes'
     paginate_by = 3
     template_name = "post/list.html"
-
-
 def note_detail(request, year, month, day):
     note = get_object_or_404(Notatka,
                              status='published',
@@ -25,3 +23,15 @@ def note_detail(request, year, month, day):
                              publish__day=day)
     return render(request, "post/detail.html",
                   {'note': note,})
+def create_note(request):
+    if request.method == 'POST':
+        form = NotatkaForm(request.POST)
+        if form.is_valid(): # sprawdzenie czy formularz jest wlasciwy
+            note = form.save(commit=False)
+            note.author = User.objects.get(id=1)
+            note.save()
+            return redirect('aplikacja:note_detail', year=note.created.year, month=note.created.strftime('%m'),
+                            day=note.created.strftime('%d'))
+    else:
+        form = NoteForm()
+    return render(request, 'Strony/create.html', {'form': form})
