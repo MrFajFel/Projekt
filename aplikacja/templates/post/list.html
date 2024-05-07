@@ -13,6 +13,8 @@
         </p>
         {{ note.body|truncatewords:30|linebreaks }}
     {% endfor %}
+{#    Jakis lany wyglaad do tego guzzika bedzie git #}
+    <a href="create">Dodaj Notatke</a>
 
     {% include "pagination.html" with page=page_obj %}
 

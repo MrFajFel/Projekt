@@ -1,5 +1,8 @@
+from django.contrib.auth.models import User
 from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+
+from aplikacja.form import NotatkaForm
 from aplikacja.models import Notatka
 from django.views.generic import ListView
 
@@ -33,5 +36,5 @@ def create_note(request):
             return redirect('aplikacja:note_detail', year=note.created.year, month=note.created.strftime('%m'),
                             day=note.created.strftime('%d'))
     else:
-        form = NoteForm()
+        form = NotatkaForm()
     return render(request, 'Strony/create.html', {'form': form})
