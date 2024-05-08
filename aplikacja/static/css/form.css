@@ -1,18 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Quicksand:wght@663&display=swap');
 
-
 * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bolder;
+  font-weight: 400;
+}
+
+body {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Quicksand", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: bolder;
-    font-weight: 400;
-  }
+}
 
-
-
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    margin: auto;
+}
 
 .form-container {
     background-color: #fff;
@@ -20,7 +32,9 @@
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
-    width: 500px;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
 }
 
 .form-container:hover {
@@ -37,7 +51,6 @@ label {
     margin-bottom: 5px;
     color: #333;
 }
-
 input[type="text"],
 textarea,
 select {
@@ -46,6 +59,8 @@ select {
     border: 1px solid #ccc;
     border-radius: 5px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 input[type="text"]:focus,
@@ -56,25 +71,32 @@ select:focus {
     outline: none;
 }
 
-#dodaj {
-    background-image: linear-gradient(to right, #00d2ff 0%, #3a7bd5  51%, #00d2ff  100%);
-    margin: 10px;
+button {
+    background-image: linear-gradient(to right, #00d2ff 0%, #3a7bd5 51%, #00d2ff 100%);
+    margin: 10px 0;
     padding: 15px 45px;
     text-align: center;
     text-transform: uppercase;
     transition: 0.5s;
     background-size: 200% auto;
-    color: black;          
-    font-weight: bold;  
+    color: white;
+    font-weight: bold;
     box-shadow: 0 0 20px #5366a3;
     display: block;
     border: none;
     border-radius: 10px;
-  }
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+}
 
-  #dodaj:hover {
-    background-position: right center; /* change the direction of the change here */
+button:hover {
+    background-position: right center;
     color: #fff;
     text-decoration: none;
-  }
+    transform: scale(1.05);
+}
 
+button:active {
+    transform: scale(0.95);
+}

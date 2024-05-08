@@ -24,7 +24,7 @@
 }
 
 
-.notatniki {
+#Notatka {
     margin-bottom: 20px;
     border: 1px solid black;
     border-radius: 5px;
@@ -34,20 +34,21 @@
     transition: box-shadow 0.5s ease; /* Add transition for smooth shadow changes */
 }
 
-.notatniki:hover {
+#Notatka:hover {
     box-shadow: 4px 4px 0 0 rgb(160, 158, 158); /* Adjust shadow on hover */
 }
-.notatniki a{
+#Notatka a{
     text-decoration: none;
     transition: 0.5s;
     color: white;
 }
 
-.notatniki a:hover{
+#Notatka a:hover{
     color: gray;
 }
 
-.notatniki h2 {
+#Notatka h2 {
+    font-size: large;
     margin-bottom: 7px;
     background-color: black;
     width: 120px;
@@ -59,7 +60,7 @@
     transition: right 0.5s ease; /* Add transition for smooth movement */
 }
 
-.notatniki h2:hover {
+#Notatka h2:hover {
     right: 60px; /* Adjust the right property to move left on hover */
 }
 
@@ -78,7 +79,7 @@
     font-weight: bolder;
 }
 
-.edit {
+.create {
     background-image: linear-gradient(to right, #00d2ff 0%, #3a7bd5  51%, #00d2ff  100%);
     margin: 10px;
     padding: 15px 45px;
@@ -91,9 +92,10 @@
     box-shadow: 0 0 20px #5366a3;
     display: block;
     border: none;
+
   }
 
-  .edit:hover {
+  .create:hover {
     background-position: right center; /* change the direction of the change here */
     color: #fff;
     text-decoration: none;

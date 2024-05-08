@@ -9,11 +9,19 @@
     <script src="https://unpkg.com/scrollreveal"></script>
     <!-- Animacje -->
 {% block content %}
-<h1>{{ note.title }} </h1>
-<p class="date">
-    Napisany {{ note.publish }} przez {{ note.author }}
-</p>
+    <div class="notatniki">
+        <h1>{{ note.title }} </h1>
 
-{#    <a href="edit/<int:note_id>">Edytuj Notatke</a>#}
-{{ note.body|linebreaks }}
+        <div id="text-notatki">
+            <p class="date" id="">
+                Napisany {{ note.publish }} przez {{ note.author }}
+            </p>
+            <p id="text">{{ note.body|linebreaks }}</p>
+
+        </div>
+    <a class="create" href="{% url 'aplikacja:edit_note' note_id=note.id %}">Edytuj notatkę</a>
+    </div>
+
+
+
 {% endblock %}

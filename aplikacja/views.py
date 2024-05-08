@@ -40,8 +40,8 @@ def create_note(request):
     return render(request, 'Strony/create.html', {'form': form})
 
 
-def edit_note(request, noteid):
-    note = get_object_or_404(Notatka, pk=noteid)
+def edit_note(request, note_id):
+    note = get_object_or_404(Notatka, pk=note_id)
     if request.method == 'POST':
         form = NotatkaForm(request.POST, instance=note)
         if form.is_valid():
@@ -50,4 +50,4 @@ def edit_note(request, noteid):
                             day=note.created.strftime('%d'))
     else:
         form = NotatkaForm(instance=note)
-    return render(request, 'Strony/edit.html', {'form': form})
+    return render(request, 'Strony/edit.html', {'form': form,'note':note})

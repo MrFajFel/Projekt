@@ -1,14 +1,22 @@
-{% extends "base.html" %}
+{{% extends "base.html" %}
 {% load static %}
-
-{% block title %}Edit Notatka{% endblock %}
 {% block content %}
-    <div class="container mt-5">
-        <h1 class="mb-4">Edit Notatka</h1>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn btn-primary">Save changes</button>
-        </form>
-    </div>
+    <link href="{% static 'css/form.css' %}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <!-- Animacje -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- Animacje -->
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" id="dodaj">Edit</button>
+    </form>
+
 {% endblock %}
+
+
+
+
+

@@ -11,19 +11,6 @@
     font-weight: 400;
   }
 
-.Notatka-Main{
-    display: flex;
-    justify-content: center;
-    column-gap: 200px;
-    margin-top: 100px;
-}
-
-.container h1{
-    margin-bottom: 25px;
-    font-weight: bolder;
-}
-
-
 .notatniki {
     margin-bottom: 20px;
     border-radius: 5px;
@@ -37,7 +24,7 @@
     color: black;
 }
 
-.notatniki h2 {
+.notatniki h1 {
     margin-bottom: 7px;
     position: relative;
     font-weight: bolder;
@@ -48,13 +35,13 @@
     border-top-right-radius: 5px;
 }
 
-.text-notatki{
+#text-notatki{
     background-color: rgb(183, 183, 187);
     padding: 15px;
     height: auto;
 }
 
-.text{
+#text{
     font-weight: bold;
 }
 
@@ -77,12 +64,11 @@
     text-transform: uppercase;
     transition: 0.5s;
     background-size: 200% auto;
-    color: black;          
-    font-weight: bold;  
+    color: black;
+    font-weight: bold;
     box-shadow: 0 0 20px #5366a3;
     display: block;
-    border: none;
-    
+
   }
 
   .create:hover {

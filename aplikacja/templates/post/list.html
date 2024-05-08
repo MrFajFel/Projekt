@@ -11,22 +11,35 @@
     <div class="container">
         <h1 class="mt-5">Notatka</h1>
         {% for note in notes %}
-            <div class="note my-4 p-3 border rounded">
-                <h2>
-                    <a href="{{ note.get_absolute_url }}" class="text-decoration-none text-primary">
-                        {{ note.title }}
+            <div class="note my-4 p-3 border rounded" id="Notatka">
+                    <a href="{{ note.get_absolute_url }}" >
+                        <h2>{{ note.title }}</h2>
                     </a>
-                </h2>
                 <p class="date text-muted">
                     Napisana {{ note.publish }} przez {{ note.author }}
                 </p>
-                <div class="note-body">
+                <p class="note-body">
                     {{ note.body|truncatewords:30|linebreaks }}
-                </div>
+                </p>
             </div>
         {% endfor %}
         <nav aria-label="Page navigation">
             {% include "pagination.html" with page=page_obj %}
         </nav>
     </div>
+
+    <script>
+    // Scroll-Reveal
+    ScrollReveal({
+  distance: '60px',
+  duration: 2500,
+  delay: 400
+  });
+
+  // Aktualnosci
+  ScrollReveal().reveal('#Notatka', { delay: 200, origin: 'left', interval: 300 });
+  updateCounter();
+
+   // Scroll-Reveal
+  </script>
 {% endblock %}

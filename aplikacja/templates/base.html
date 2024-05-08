@@ -5,14 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{% block title %}{% endblock %}</title>
-{#    <link href="{% static 'css/index.css' %}" rel="stylesheet">#}
-{#    <link href="{% static 'css/form.css' %}" rel="stylesheet">#}
-{#    <link href="{% static 'css/notatka.css' %}" rel="stylesheet">#}
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
+    <link href="{% static 'css/notatka.css' %}" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-  <!-- Animacje -->
     <script src="https://unpkg.com/scrollreveal"></script>
-  <!-- Animacje -->
 </head>
 <body>
     <div class="container mt-5">
@@ -22,8 +19,10 @@
                 {% endblock %}
             </div>
             <div id="sidebar" class="col-md-4">
-                <h2>Notatki</h2>
-                <a href="/note/create">Stworz Notatke</a>
+                <div class="back">
+                     <h2>Notatki</h2>
+                </div>
+                <a class="create" href="/note/create">Stworz Notatke</a>
             </div>
         </div>
     </div>
