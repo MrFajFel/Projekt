@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Quicksand:wght@663&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bolder;
+    font-weight: 400;
+  }
+
+.Notatka-Main{
+    display: flex;
+    justify-content: center;
+    column-gap: 200px;
+    margin-top: 100px;
+}
+
+.container h1{
+    margin-bottom: 25px;
+    font-weight: bolder;
+}
+
+
+.notatniki {
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 20px;
+    width: 600px;
+}
+
+
+.notatniki a{
+    text-decoration: none;
+    color: black;
+}
+
+.notatniki h2 {
+    margin-bottom: 7px;
+    position: relative;
+    font-weight: bolder;
+    background-color: rgb(183, 183, 187);
+    text-align: center;
+    padding: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.text-notatki{
+    background-color: rgb(183, 183, 187);
+    padding: 15px;
+    height: auto;
+}
+
+.text{
+    font-weight: bold;
+}
+
+.back{
+    background-color: rgb(183, 183, 187);
+    padding: 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    text-align: center;
+}
+.back h2{
+    font-weight: bolder;
+}
+
+.create {
+    background-image: linear-gradient(to right, #00d2ff 0%, #3a7bd5  51%, #00d2ff  100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: black;          
+    font-weight: bold;  
+    box-shadow: 0 0 20px #5366a3;
+    display: block;
+    border: none;
+    
+  }
+
+  .create:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+
+

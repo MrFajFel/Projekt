@@ -1,6 +1,13 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %} {{ note.title }}  {% endblock %}
-
+        <link href="{% static 'css/notatka.css' %}" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <!-- Animacje -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- Animacje -->
 {% block content %}
 <h1>{{ note.title }} </h1>
 <p class="date">
