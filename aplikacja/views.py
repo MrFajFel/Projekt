@@ -23,7 +23,7 @@ def note_detail(request, year, month, day):
                              status='published',
                              publish__year=year,
                              publish__month=month,
-                             publish__day=day)
+                             publish__day=day,)
     return render(request, "post/detail.html",
                   {'note': note,})
 def create_note(request):
@@ -38,3 +38,16 @@ def create_note(request):
     else:
         form = NotatkaForm()
     return render(request, 'Strony/create.html', {'form': form})
+
+
+def edit_note(request, noteid):
+    note = get_object_or_404(Notatka, pk=noteid)
+    if request.method == 'POST':
+        form = NotatkaForm(request.POST, instance=note)
+        if form.is_valid():
+            form.save()
+            return redirect('aplikacja:note_detail', year=note.created.year, month=note.created.strftime('%m'),
+                            day=note.created.strftime('%d'))
+    else:
+        form = NotatkaForm(instance=note)
+    return render(request, 'Strony/edit.html', {'form': form})

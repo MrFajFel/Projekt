@@ -1,21 +1,28 @@
 {% extends "base.html" %}
+{% load static %}
+<link href="{% static 'css/blog.css' %}" rel="stylesheet">
 
 {% block title %}Notatki{% endblock %}
 {% block content %}
-    <h1>Notatka </h1>
-    {% for note in notes %}
-        <h2>
-        <a href="{{ note.get_absolute_url }}">
-            {{ note.title }}
-        </a></h2>
-        <p class="date">
-        Napisana {{ note.publish }} przez {{ note.author }}
-        </p>
-        {{ note.body|truncatewords:30|linebreaks }}
-    {% endfor %}
-{#    Jakis lany wyglaad do tego guzzika bedzie git #}
-    <a href="create">Dodaj Notatke</a>
-
-    {% include "pagination.html" with page=page_obj %}
-
+    <div class="container">
+        <h1 class="mt-5">Notatka</h1>
+        {% for note in notes %}
+            <div class="note my-4 p-3 border rounded">
+                <h2>
+                    <a href="{{ note.get_absolute_url }}" class="text-decoration-none text-primary">
+                        {{ note.title }}
+                    </a>
+                </h2>
+                <p class="date text-muted">
+                    Napisana {{ note.publish }} przez {{ note.author }}
+                </p>
+                <div class="note-body">
+                    {{ note.body|truncatewords:30|linebreaks }}
+                </div>
+            </div>
+        {% endfor %}
+        <nav aria-label="Page navigation">
+            {% include "pagination.html" with page=page_obj %}
+        </nav>
+    </div>
 {% endblock %}
