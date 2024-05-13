@@ -14,13 +14,13 @@ from django.views.generic import ListView
 #     return render(request, "post/list.html",{"notes":notes})
 # Create your views here.
 class NoteListView(ListView):
-    queryset = Notatka.objects.all().filter(status='published')
+    queryset = Notatka.objects.all().filter(status='wazne')
     context_object_name = 'notes'
     paginate_by = 3
     template_name = "post/list.html"
 def note_detail(request, year, month, day):
     note = get_object_or_404(Notatka,
-                             status='published',
+                             status='wazne',
                              publish__year=year,
                              publish__month=month,
                              publish__day=day,)
