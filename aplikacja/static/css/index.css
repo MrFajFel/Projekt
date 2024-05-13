@@ -32,10 +32,22 @@
     width: 600px;
     box-shadow: 2px 2px 0 0 rgb(83, 83, 83);
     transition: box-shadow 0.5s ease; /* Add transition for smooth shadow changes */
+    height: auto;
+    width: auto;
+}
+
+#Notatka p{
+    width: auto;
+    text-align: justify;
+}
+
+.row{
+    width: auto;
 }
 
 #Notatka:hover {
-    box-shadow: 4px 4px 0 0 rgb(160, 158, 158); /* Adjust shadow on hover */
+    box-shadow: 4px 4px 0 0 rgb(160, 158, 158, 0.5), /* Adjust shadow on hover */
+    6px 6px 0 0 rgb(160, 158, 158, 0.3);
 }
 #Notatka a{
     text-decoration: none;
@@ -53,15 +65,18 @@
     background-color: black;
     width: 120px;
     border-radius: 5px;
-    text-align: center;
+    text-align: justify;
     position: relative;
     right: 40px;
     padding: 5px;
     transition: right 0.5s ease; /* Add transition for smooth movement */
+
 }
 
 #Notatka h2:hover {
     right: 60px; /* Adjust the right property to move left on hover */
+    box-shadow: 0 0 10px 10px rgba(192,192,192,0.7),
+                0 0 20px 10px rgba(192,192,192,0.5);
 }
 
 .text{

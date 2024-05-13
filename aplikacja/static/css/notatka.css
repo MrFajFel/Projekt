@@ -15,7 +15,7 @@
     margin-bottom: 20px;
     border-radius: 5px;
     padding: 20px;
-    width: 600px;
+    width: auto;
 }
 
 
@@ -39,6 +39,7 @@
     background-color: rgb(183, 183, 187);
     padding: 15px;
     height: auto;
+    width: auto;
 }
 
 #text{
