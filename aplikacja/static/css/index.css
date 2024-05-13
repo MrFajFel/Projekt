@@ -72,7 +72,7 @@
     transition: right 0.5s ease; /* Add transition for smooth movement */
 
 }
-/*dziala*/
+/*dzialad*/
 #Notatka h2:hover {
     right: 60px; /* Adjust the right property to move left on hover */
     box-shadow: 0 0 10px 10px rgba(192,192,192,0.7),
