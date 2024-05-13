@@ -14,7 +14,9 @@
 
         <div id="text-notatki">
             <p class="date" id="">
-                Napisany {{ note.publish }} przez {{ note.author }}
+                Napisany {{ note.publish }} <br>
+                Autor: {{ note.author }} <br>
+                Status: {{ note.status }}
             </p>
             <p id="text">{{ note.body|linebreaks }}</p>
 

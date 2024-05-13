@@ -10,8 +10,8 @@ class Notatka(models.Model):
         ('wazne','Wazne')
     )
     STATUS_CHOICES = (
-        ('draft', 'Draft'),
-        ('published', 'Published'),
+        ('mniejwazne', 'Mniejwazne'),
+        ('wazne', 'Wazne')
     )
     title = models.CharField(max_length=250)
     author = models.ForeignKey(User,
@@ -23,7 +23,7 @@ class Notatka(models.Model):
     updated = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10,
                               choices=STATUS_CHOICES,
-                              default='draft')
+                              default='mniejwazne')
     def get_absolute_url(self):
         return reverse("aplikacja:note_detail",
                        args=[self.publish.year,
