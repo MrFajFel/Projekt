@@ -11,7 +11,7 @@ app_name = 'aplikacja'
 urlpatterns = [
     # path('', views.post_list, name='post_list'),
     path('', views.NoteListView.as_view(),name='note-list'),
-    path('<int:year>/<int:month>/<int:day>/',
+    path('<int:year>/<int:month>/<int:day>/<int:note_id>',
          views.note_detail,
          name='note_detail'),
     path('create/', views.create_note, name='create'),

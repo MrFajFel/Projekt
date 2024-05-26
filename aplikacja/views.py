@@ -19,12 +19,13 @@ class NoteListView(ListView):
     template_name = "post/list.html"
 
 
-def note_detail(request, year, month, day):
+def note_detail(request, year, month, day,note_id):
     note = get_object_or_404(Notatka,
                              status__in=('wazne', 'mniejwazne'),
                              publish__year=year,
                              publish__month=month,
                              publish__day=day,
+                             pk=note_id
                              )
     return render(request, "post/detail.html",
                   {'note': note, })
@@ -37,8 +38,7 @@ def create_note(request):
             note = form.save(commit=False)
             note.author = User.objects.get(id=1)
             note.save()
-            return redirect('aplikacja:note_detail', year=note.created.year, month=note.created.strftime('%m'),
-                            day=note.created.strftime('%d'))
+            return redirect('aplikacja:note-list')
     else:
         form = NotatkaForm()
     return render(request, 'Strony/create.html', {'form': form})
@@ -50,8 +50,7 @@ def edit_note(request, note_id):
         form = NotatkaForm(request.POST, instance=note)
         if form.is_valid():
             form.save()
-            return redirect('aplikacja:note_detail', year=note.updated.year, month=note.updated.strftime('%m'),
-                            day=note.updated.strftime('%d'))
+            return redirect('aplikacja:note-list')
     else:
         form = NotatkaForm(instance=note)
     return render(request, 'Strony/edit.html', {'form': form, 'note': note})
