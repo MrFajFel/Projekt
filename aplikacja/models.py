@@ -5,10 +5,6 @@ from django.contrib.auth.models import User
 
 
 class Notatka(models.Model):
-    Signiface = (
-        ('mniejwazne', 'Mniejwazne'),
-        ('wazne','Wazne')
-    )
     STATUS_CHOICES = (
         ('mniejwazne', 'Mniejwazne'),
         ('wazne', 'Wazne')
