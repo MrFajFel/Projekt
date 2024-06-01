@@ -63,7 +63,8 @@
     font-size: large;
     margin-bottom: 7px;
     background-color: black;
-    width: 120px;
+    width: fit-content;
+    min-width: 120px;
     border-radius: 5px;
     text-align: justify;
     position: relative;
